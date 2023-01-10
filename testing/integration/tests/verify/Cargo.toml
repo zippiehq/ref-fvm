@@ -1,0 +1,21 @@
+[package]
+name = "verify"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+fvm_sdk = { version = "3.0.0-alpha.19", path = "../../../../sdk" }
+fvm_shared = { version = "3.0.0-alpha.15", path = "../../../../shared" }
+fvm_ipld_encoding = { version = "0.3.2", path = "../../../../ipld/encoding" }
+serde = {version = "1.0.145", features = ["derive"] }
+serde_tuple = "0.5.0"
+log = "0.4.14"
+risc0-zkvm = {git = "https://github.com/risc0/risc0.git", default-features = false}
+hex = "0.4.3"
+serde_cbor = "0.11.2"
+
+[build-dependencies]
+substrate-wasm-builder = "4.0.0"
+

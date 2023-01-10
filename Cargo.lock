@@ -404,6 +404,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "block"
+version = "0.1.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0d8c1fef690941d3e7788d328517591fecc684c084084702d6ff1641e993699a"
+
+[[package]]
 name = "block-buffer"
 version = "0.7.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -556,6 +562,26 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e3b5ca7a04898ad4bcd41c90c5285445ff5b791899bb1b0abdd2a2aa791211d7"
 
 [[package]]
+name = "bytemuck"
+version = "1.12.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "aaa3a8d9a1ca92e282c96a32d6511b695d7d994d1d102ba85d279f9b2756947f"
+dependencies = [
+ "bytemuck_derive",
+]
+
+[[package]]
+name = "bytemuck_derive"
+version = "1.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5fe233b960f12f8007e3db2d136e3cb1c291bfd7396e384ee76025fc1a3932b4"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "byteorder"
 version = "1.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -630,6 +656,9 @@ name = "cc"
 version = "1.0.78"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a20104e2335ce8a659d6dd92a51a767a0c062599c73b343fd152cb401e828c3d"
+dependencies = [
+ "jobserver",
+]
 
 [[package]]
 name = "cfg-if"
@@ -827,6 +856,34 @@ name = "convert_case"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6245d59a3e82a7fc217c5828a6692dbc6dfb63a0c8c90495621f7b9d79704a0e"
+
+[[package]]
+name = "core-foundation"
+version = "0.9.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "194a7a9e6de53fa55116934067c844d9d749312f75c6f6d0980e8c252f8c2146"
+dependencies = [
+ "core-foundation-sys",
+ "libc",
+]
+
+[[package]]
+name = "core-foundation-sys"
+version = "0.8.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5827cebf4670468b8772dd191856768aedcb1b0278a04f989f7766351917b9dc"
+
+[[package]]
+name = "core-graphics-types"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3a68b68b3446082644c91ac778bf50cd4104bfb002b5a6a7c44cca5a2c70788b"
+dependencies = [
+ "bitflags",
+ "core-foundation",
+ "foreign-types",
+ "libc",
+]
 
 [[package]]
 name = "core2"
@@ -2132,6 +2189,21 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1"
 
 [[package]]
+name = "foreign-types"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f6f339eb8adc052cd2ca78910fda869aefa38d22d5cb648e6485e4d3fc06f3b1"
+dependencies = [
+ "foreign-types-shared",
+]
+
+[[package]]
+name = "foreign-types-shared"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "00b0228411908ca8685dba7fc2cdd70ec9990a6e753e89b6ac91a84c40fbaf4b"
+
+[[package]]
 name = "forest_hash_utils"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2523,6 +2595,7 @@ dependencies = [
  "fvm_ipld_encoding 0.3.2",
  "fvm_ipld_hamt 0.6.1",
  "fvm_shared 3.0.0-alpha.15",
+ "hex",
  "lazy_static",
  "libsecp256k1",
  "multihash 0.16.3",
@@ -3175,6 +3248,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "impl-trait-for-tuples"
+version = "0.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "11d7a9f6330b71fea57921c9b61c47ee6e84f72d394754eff6163ae67e7395eb"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "indexmap"
 version = "1.9.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3278,6 +3362,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "87e078cce01485f418bae3beb34dd604aaedf2065502853c7da17fbce8e64eda"
 dependencies = [
  "cc",
+]
+
+[[package]]
+name = "jobserver"
+version = "0.1.25"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "068b1ee6743e4d11fb9c6a1e6064b3693a1b600e7f5f5988047d98b3dc9fb90b"
+dependencies = [
+ "libc",
 ]
 
 [[package]]
@@ -3463,6 +3556,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "malloc_buf"
+version = "0.0.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "62bb907fe88d54d8d9ce32a3cceab4218ed2f6b7d35617cafe9adf84e43919cb"
+dependencies = [
+ "libc",
+]
+
+[[package]]
 name = "mapr"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3539,6 +3641,20 @@ dependencies = [
  "serde",
  "tempfile",
  "typenum",
+]
+
+[[package]]
+name = "metal"
+version = "0.24.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "de11355d1f6781482d027a3b4d4de7825dcedb197bf573e0596d00008402d060"
+dependencies = [
+ "bitflags",
+ "block",
+ "core-graphics-types",
+ "foreign-types",
+ "log",
+ "objc",
 ]
 
 [[package]]
@@ -3778,6 +3894,25 @@ checksum = "f6058e64324c71e02bc2b150e4f3bc8286db6c83092132ffa3f6b1eab0f9def5"
 dependencies = [
  "hermit-abi",
  "libc",
+]
+
+[[package]]
+name = "objc"
+version = "0.2.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "915b1b472bc21c53464d6c8461c9d3af805ba1ef837e1cac254428f4a77177b1"
+dependencies = [
+ "malloc_buf",
+ "objc_exception",
+]
+
+[[package]]
+name = "objc_exception"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ad970fb455818ad6cba4c122ad012fae53ae8b4795f86378bce65e4f6bab2ca4"
+dependencies = [
+ "cc",
 ]
 
 [[package]]
@@ -4256,6 +4391,83 @@ dependencies = [
 ]
 
 [[package]]
+name = "risc0-circuit-rv32im"
+version = "1.0.0-rc.2"
+source = "git+https://github.com/risc0/risc0.git#8df520aeec3796dfaa0b13897005fdbd539b922f"
+dependencies = [
+ "anyhow",
+ "cc",
+ "glob",
+ "log",
+ "metal",
+ "risc0-zkp",
+ "risc0-zkvm-platform",
+ "sha2 0.10.6",
+ "tracing",
+]
+
+[[package]]
+name = "risc0-zeroio"
+version = "1.0.0-rc.2"
+source = "git+https://github.com/risc0/risc0.git#8df520aeec3796dfaa0b13897005fdbd539b922f"
+dependencies = [
+ "bytemuck",
+ "impl-trait-for-tuples",
+ "log",
+ "risc0-zeroio-derive",
+ "tracing",
+]
+
+[[package]]
+name = "risc0-zeroio-derive"
+version = "1.0.0-rc.2"
+source = "git+https://github.com/risc0/risc0.git#8df520aeec3796dfaa0b13897005fdbd539b922f"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
+name = "risc0-zkp"
+version = "1.0.0-rc.2"
+source = "git+https://github.com/risc0/risc0.git#8df520aeec3796dfaa0b13897005fdbd539b922f"
+dependencies = [
+ "anyhow",
+ "bytemuck",
+ "log",
+ "metal",
+ "paste",
+ "rand_core",
+ "risc0-zeroio",
+ "serde",
+ "sha2 0.10.6",
+ "tracing",
+]
+
+[[package]]
+name = "risc0-zkvm"
+version = "1.0.0-rc.2"
+source = "git+https://github.com/risc0/risc0.git#8df520aeec3796dfaa0b13897005fdbd539b922f"
+dependencies = [
+ "anyhow",
+ "bytemuck",
+ "cfg-if 1.0.0",
+ "log",
+ "risc0-circuit-rv32im",
+ "risc0-zeroio",
+ "risc0-zkp",
+ "risc0-zkvm-platform",
+ "serde",
+ "tracing",
+]
+
+[[package]]
+name = "risc0-zkvm-platform"
+version = "1.0.0-rc.2"
+source = "git+https://github.com/risc0/risc0.git#8df520aeec3796dfaa0b13897005fdbd539b922f"
+
+[[package]]
 name = "rlp"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4456,6 +4668,16 @@ version = "0.11.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cfc50e8183eeeb6178dcb167ae34a8051d63535023ae38b5d8d12beae193d37b"
 dependencies = [
+ "serde",
+]
+
+[[package]]
+name = "serde_cbor"
+version = "0.11.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2bef2ebfde456fb76bbcf9f59315333decc4fda0b2b44b420243c11e0f5ec1f5"
+dependencies = [
+ "half",
  "serde",
 ]
 
@@ -4971,6 +5193,35 @@ dependencies = [
 ]
 
 [[package]]
+name = "tracing"
+version = "0.1.37"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8ce8c33a8d48bd45d624a6e523445fd21ec13d3653cd51f681abf67418f54eb8"
+dependencies = [
+ "cfg-if 1.0.0",
+ "pin-project-lite",
+ "tracing-attributes",
+ "tracing-core",
+]
+
+[[package]]
+name = "tracing-attributes"
+version = "0.1.23"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4017f8f45139870ca7e672686113917c71c7a6e02d4924eda67186083c03081a"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
+name = "tracing-core"
+version = "0.1.30"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "24eb03ba0eab1fd845050058ce5e616558e8f8d8fca633e6b163fe25c797213a"
+
+[[package]]
 name = "typenum"
 version = "1.16.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5052,6 +5303,22 @@ checksum = "2209b78d1249f7e6f3293657c9779fe31ced465df091bbd433a1cf88e916ec55"
 dependencies = [
  "ctor",
  "version_check",
+]
+
+[[package]]
+name = "verify"
+version = "0.1.0"
+dependencies = [
+ "fvm_ipld_encoding 0.3.2",
+ "fvm_sdk 3.0.0-alpha.19",
+ "fvm_shared 3.0.0-alpha.15",
+ "hex",
+ "log",
+ "risc0-zkvm",
+ "serde",
+ "serde_cbor",
+ "serde_tuple",
+ "substrate-wasm-builder",
 ]
 
 [[package]]
