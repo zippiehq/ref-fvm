@@ -1,0 +1,21 @@
+[package]
+name = "bls"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+fvm_sdk = { version = "3.0.0-alpha.19", path = "../../../../sdk" }
+fvm_shared = { version = "3.0.0-alpha.15", path = "../../../../shared" }
+fvm_ipld_encoding = { version = "0.3.2", path = "../../../../ipld/encoding" }
+serde = {version = "1.0.145", features = ["derive"] }
+serde_tuple = "0.5.0"
+signature_bls = { git = "https://github.com/dymchenkko/ockam"}
+data-encoding = "2.3.3"
+
+[build-dependencies]
+substrate-wasm-builder = "4.0.0"
+
+[profile.dev]
+debug = 1
